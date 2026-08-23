@@ -56,6 +56,18 @@ typedef enum
     YLPUART_stop2 = 1,
 } YLPUART_stopBits;
 
+typedef enum
+{
+    /*
+     * NOTE: using my own hard-coded values as I couldn't find device headers
+     * for them from STM
+     */
+    YLPUART_pclk   = 0U,
+    YLPUART_sysclk = 1U,
+    YLPUART_hsi    = 2U,
+    YLPUART_lse    = 3U
+} YLPUART_kernelClock;
+
 
 typedef struct
 {
@@ -70,6 +82,7 @@ typedef struct
     uint32_t                baudRate;
     YLPUART_dataLength      dataLength;
     YLPUART_enableDisable   parityEnable;
+    YLPUART_kernelClock     kernelClock;
 } YLPUART_config;
 
 
