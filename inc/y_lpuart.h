@@ -76,7 +76,7 @@ typedef struct
 typedef struct
 {
     YLPUART_instance*       instance;
-    YLPUART_status*         status;
+    YLPUART_status          status;
     YLPUART_config*         config;
     YLPUART_advancedConfig* advancedConfig;
     uint16_t                mask;
@@ -84,8 +84,8 @@ typedef struct
 
 
 YLPUART_returnStatus ylpuart_setConfig      (YLPUART_typeDef*);                             /* handler */
-YLPUART_status ylpuart_transmit       (YLPUART_typeDef*, uint8_t*, uint16_t);         /* handler, data, size */
-YLPUART_status ylpuart_receive        (YLPUART_typeDef*, uint8_t*, uint16_t);         /* handler, data, size */
+YLPUART_returnStatus ylpuart_transmit       (YLPUART_typeDef*, uint8_t*, uint16_t);         /* handler, data, size */
+YLPUART_returnStatus ylpuart_receive        (YLPUART_typeDef*, uint8_t*, uint16_t);         /* handler, data, size */
 
 
 #endif
